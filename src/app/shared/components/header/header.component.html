@@ -1,3 +1,20 @@
-<p>
-  header works!
-</p>
+<mat-toolbar>
+  <!-- Left side -->
+  <span>HouseChores</span>
+  <span class="spacer"></span>
+
+  <!-- Right side -->
+  <a routerLink=""
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a routerLink="about"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{exact:true}">About</a>
+  <a routerLink="auth/signup"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{exact:true}">Sign up</a>
+  <a routerLink="auth/login"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{exact:true}">Log in</a>
+
+</mat-toolbar>

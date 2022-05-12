@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Fonts */
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI"), url(./assets/fonts/SegoeUI.ttf), format("truetype");
+}
+
+
+/* Global variables */
+$font-color: #222F3E;
+$font-size: 16px;
+$font-size-h1: calc(16px + 3vw);
+
+$confirm-button-color: #1DD1A1;
+
+$input-background-color: #F8F8F8;
+
+* {
+  font-family: "Segoe UI" !important;
+}
+
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: $font-color;
+}
+
+p, a, label, span, button {
+  font-size: $font-size;
+}
+
+a { /* Unvisited link  */
+  color:$font-color;
+  text-decoration: none;
+}
+//a:visited {color:$font-color;} /* Visited link    */
+//a:hover {color:$font-color;}   /* Mouse over link */
+//a:active {color:$font-color;}  /* Selected link   */
+
+input, button {
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 175px;
+  font-weight: 600;
+}
+
+input {
+  text-align: center;
+  background-color: $input-background-color;
+  border: 1px solid lightgray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Spinner */
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: white;
+  }

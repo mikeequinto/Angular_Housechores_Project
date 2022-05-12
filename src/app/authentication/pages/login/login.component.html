@@ -1,31 +1,24 @@
 <div class="title">
-  <h1>Sign Up</h1>
+  <h1>Log in</h1>
 </div>
 
 <div class="form">
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name</label><br>
-    <input id="name" type="text" formControlName="name"><br>
-
-
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <label for="name">Email</label><br>
     <input id="email" type="email" formControlName="email"><br>
 
     <label for="name">Password</label><br>
     <input id="password" type="password" formControlName="password"><br>
 
-    <label for="passwordConfirm">Confirm Password</label><br>
-    <input id="passwordConfirm" type="password" formControlName="passwordConfirm"><br>
-
     <div *ngIf="invalidForm">
       <p class="errorMessage">{{ errorMessage }}</p>
     </div>
 
     <button type="submit">
-      <span *ngIf="!isLoading">Sign up</span>
+      <span *ngIf="!isLoading">Log in</span>
       <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
     </button>
   </form>
 
-  <a routerLink="/auth/login">Already have an account?</a>
+  <a routerLink="/auth/signup">Don't have an account?</a>
 </div>

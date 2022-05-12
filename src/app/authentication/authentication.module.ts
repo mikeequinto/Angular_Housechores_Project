@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { AuthenticationComponent } from './authentication.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './pages/signup/signup.component';
+import { RouterModule } from '@angular/router';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    RouterModule,
+    AuthenticationRoutingModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
-  declarations: []
+  declarations: [
+    SignupComponent,
+    LoginComponent
+  ]
 })
 export class AuthenticationModule { }
