@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegistrationRequest } from 'src/app/core/models/registrationRequest.model';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +26,9 @@ export class SignupComponent implements OnInit {
 
   isLoading: boolean = false;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
@@ -59,6 +63,29 @@ export class SignupComponent implements OnInit {
 
       // Form is valid
       this.invalidForm = false;
+      this.isLoading = true;
+
+      // Register user
+      const registrationRequest: RegistrationRequest = {
+        name: name,
+        username: email,
+        email: email,
+        password: password
+      }
+      this.register(registrationRequest);
     }
+  }
+
+  register(registrationRequest: RegistrationRequest) {
+    this.authService.register(registrationRequest).subscribe(
+      response => {
+        console.log(response);
+        this.isLoading = false;
+      },
+      error => {
+        console.log(error);
+        this.isLoading = false;
+      }
+    )
   }
 }
