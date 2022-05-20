@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoginComponent } from './pages/login/login.component';
+import { EmailConfirmationComponent } from './pages/emailConfirmation/email-confirmation/email-confirmation.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './pages/login/login.component';
   ],
   declarations: [
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    EmailConfirmationComponent
   ]
 })
 export class AuthenticationModule { }
