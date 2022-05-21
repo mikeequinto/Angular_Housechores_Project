@@ -5,16 +5,20 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { HomeComponent } from './home.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatSliderModule
+    MatSliderModule,
+    FlexLayoutModule
   ]
 })
 export class HomeModule { }

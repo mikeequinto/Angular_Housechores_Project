@@ -64,3 +64,10 @@ input {
 .mat-progress-spinner circle, .mat-spinner circle {
   stroke: white;
   }
+
+/* Message banner */
+.message-banner-success{
+  background-color: lightgreen;
+  padding: 3vw;
+  border-radius: 10px;
+}
