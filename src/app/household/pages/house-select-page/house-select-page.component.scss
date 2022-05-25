@@ -1,0 +1,32 @@
+@import "../../../../styles.scss";
+
+.content {
+  padding-top: 6vw;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: min(5vw, 70px);
+}
+
+input {
+  margin-top: min(2vw, 30px);
+  margin-bottom: min(3vw, 40px);
+}
+
+p {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+#btn-new, #btn-join {
+  color: white;
+}
+
+#btn-new {
+  background-color: $confirm-button-color;
+}
+
+#btn-join {
+  background-color: $dark-button-color;
+}

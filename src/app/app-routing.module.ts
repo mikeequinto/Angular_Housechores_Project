@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () => import('./authentication/authentication.module')
       .then((m) => m.AuthenticationModule)
   },
+  {
+    path: 'household',
+    loadChildren: () => import('./household//household.module')
+      .then((m) => m.HouseholdModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HouseSelectPageComponent } from './pages/house-select-page/house-select-page.component';
+import { HouseholdRoutingModule } from './household-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +11,10 @@ import { HouseSelectPageComponent } from './pages/house-select-page/house-select
     HouseSelectPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HouseholdRoutingModule
   ]
 })
 export class HouseholdModule { }

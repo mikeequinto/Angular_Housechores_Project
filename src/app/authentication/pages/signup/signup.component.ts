@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegistrationRequest } from 'src/app/core/models/registrationRequest.model';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -27,7 +28,8 @@ export class SignupComponent implements OnInit {
   isLoading: boolean = false;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -81,6 +83,11 @@ export class SignupComponent implements OnInit {
       response => {
         console.log(response);
         this.isLoading = false;
+        this.router.navigate(
+          ['/auth/emailConfirmation'],
+          { queryParams: {
+              email: registrationRequest.email
+          }});
       },
       error => {
         console.log(error);

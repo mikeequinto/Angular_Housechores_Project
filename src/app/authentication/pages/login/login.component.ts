@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginRequest } from 'src/app/core/models/loginRequest.model';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +27,9 @@ export class LoginComponent implements OnInit {
 
   isLoading: boolean = false;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -51,7 +56,17 @@ export class LoginComponent implements OnInit {
     else {
 
       // Form is valid
-      this.invalidForm = false;
+      const request: LoginRequest = {
+        email: email,
+        password: password
+      }
+      this.authService.login(request).subscribe(response => {
+        console.log(response);
+        this.router.navigate(['/household/selection']);
+      },
+      error => {
+        console.log(error);
+      });
     }
   }
 

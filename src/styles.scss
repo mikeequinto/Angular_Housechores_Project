@@ -10,10 +10,12 @@
 
 /* Global variables */
 $font-color: #222F3E;
-$font-size: 16px;
+$font-size: calc(10px + 1vw);
 $font-size-h1: calc(16px + 3vw);
+$font-size-h2: calc(16px + 2vw);
 
 $confirm-button-color: #1DD1A1;
+$dark-button-color: #222F3E;
 
 $input-background-color: #F8F8F8;
 
@@ -28,8 +30,16 @@ body {
   color: $font-color;
 }
 
+h1 {
+  font-size: min($font-size-h1, 60px) !important;
+}
+
+h2 {
+  font-size: min($font-size-h1, 40px) !important;
+}
+
 p, a, label, span, button {
-  font-size: $font-size;
+  font-size: min($font-size, 18px) !important;
 }
 
 a { /* Unvisited link  */

@@ -1,1 +1,16 @@
-<p>house-select-page works!</p>
+<div class="content">
+  <h1>Your Household</h1>
+  <form [formGroup]="newForm" (ngSubmit)="handleCreate()">
+    <label>Name of your household</label><br>
+    <input type="text" formControlName="name"><br>
+    <button id="btn-new" type="submit">Create new</button><br>
+  </form>
+
+  <p>- or -</p>
+
+  <form [formGroup]="existingForm">
+    <label>Enter the id of an existing household</label><br>
+    <input type="text" formControlName="id"><br>
+    <button id="btn-join" type="submit">Join</button>
+  </form>
+</div>
